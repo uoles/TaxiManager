@@ -38,12 +38,8 @@ public class Message implements Runnable {
     @Override
     public void run() {
         try {
-            try {
-                updateXML();
-                sendMessage();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            updateXML();
+            sendMessage();
         } catch (Exception e) {
             e.printStackTrace();
         }
