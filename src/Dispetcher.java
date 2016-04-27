@@ -34,7 +34,7 @@ public class Dispetcher {
         return instance;
     }
 
-    public int setMessage(String xmlMessage) {
+    public synchronized int setMessage(String xmlMessage) {
         int dispatchedId = getDispatchedId();
         if (dispatchedId > -1) {
             new Message(dispatchedId, xmlMessage, performers);
