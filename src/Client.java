@@ -9,19 +9,19 @@ import javax.xml.parsers.ParserConfigurationException;
 public class Client implements Runnable {
 
     public Client() {
-        run();
+        new Thread(this, "Client").start();
     }
 
     @Override
     public void run() {
         try {
-            start();
+            sendMessage();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void start() {
+    private void sendMessage() {
         int id = 0;
         try {
             while (id > -1) {
